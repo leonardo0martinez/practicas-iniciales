@@ -4,29 +4,29 @@
 
 
 ```console
-#MOSTRAR IMAGENES DESCARGADAS
+# MOSTRAR IMAGENES DESCARGADAS
 docker images
 
-#MOSTRAR CONTENEDORES
+# MOSTRAR CONTENEDORES
 docker ps
 docker ps -a //MUESTRA TODOS LOS CONTENEDORES
 
-#ELIMINAR UN CONTENEDOR
+# ELIMINAR UN CONTENEDOR
 docker rm id_contenedor
 
-#ELIMINAR UN IMAGEN
+# ELIMINAR UN IMAGEN
 docker rmi id_imagen
 
-#CREAR IMAGEN
+# CREAR IMAGEN
 docker build -t nombre_contenedor .
 
-#CREAR CONTENEDOR
+# CREAR CONTENEDOR
 docker run -p 5000:5000 --name nombre_contenedor nombre_imagen
 
-#SABER LA IP DEL CONTENEDOR
+# SABER LA IP DEL CONTENEDOR
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nombre_o_id_contenedor
 
-#COMANDO PARA DOCKERHUB
+# COMANDO PARA DOCKERHUB
 docker tag nombre_imagen usuario_dockerhub/nombre_imagen
 docker login
 docker push nombre_usuario/nombre_imagen
@@ -59,16 +59,16 @@ docker exec -it dbmongo bash
 
 ## Comandos para crear un contenedor de mysql
 ```console
-#DESCARGAR CONTENEDOR MYSQL
+# DESCARGAR CONTENEDOR MYSQL
 docker pull mysql
 
-#CREAR CONTENDOR PARA MYSQL
+# CREAR CONTENDOR PARA MYSQL
 docker run -d -p 33061:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=123 mysql
 
-#CREAR CONTENEDOR PARA NODE
+# CREAR CONTENEDOR PARA NODE
 docker run -it -p 3001:3001 --name servidor --link mysql-db:mysql prueba
 
-#COMANDO PARA DAR PRIVILEGIOS EN MYSQL
+# COMANDO PARA DAR PRIVILEGIOS EN MYSQL
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
 flush privileges;
 ```
