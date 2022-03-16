@@ -1,3 +1,7 @@
+# Video del Taller
+
+https://drive.google.com/file/d/1FG8Ncck0SD1OJ76gaAmb7ByqmEdqdbFb/view?usp=sharing
+
 # Comandos de Docker
 
 ## Comandos para el manejo de docker
@@ -69,7 +73,7 @@ docker run -d -p 33061:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=123 mysql
 docker run -it -p 3001:3001 --name servidor --link mysql-db:mysql prueba
 
 # COMANDO PARA DAR PRIVILEGIOS EN MYSQL
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'pass';
+ALTER USER 'nombre_usuario'@'localhost' IDENTIFIED WITH mysql_native_password BY 'contraseña_usuario';
 flush privileges;
 ```
 
