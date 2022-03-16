@@ -1,0 +1,10 @@
+FROM node:17-alpine AS node
+WORKDIR /server
+COPY . .
+RUN npm install
+
+ENV REACT_APP_SERVER_IP 172.17.0.3
+ENV REACT_APP_SERVER_PORT 5000
+
+EXPOSE 3000
+CMD ["npm", "start"]
